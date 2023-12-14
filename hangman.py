@@ -27,8 +27,28 @@ def play_hangman(word):
    print("\n")
    # Initialise game loop
    while not guessed and tries_left > 0:
-        # Get user input
-        guess = input(Fore.BLUE + "Please guess a letter or word: ").upper()
+      # Get user input
+      guess = input(Fore.BLUE + "Please guess a letter or word: ").upper()
+      # Checks if guess is a single letter
+      if len(guess) == 1 and guess.isalpha():
+      # Checks if the letter has already been guessed
+      if guess in guessed_letters:
+         print(Fore.RED + "You already guessed this letter", guess)
+      # Check if the letter is not in the word
+      elif guess not in word:
+         print(Fore.RED + guess, Fore.RED + "is not in the word.")
+         tries_left -= 1
+         guessed_letters.append(guess)
+      else: 
+      # Correct letter guess
+         print(Fore.GREEN + "Good job,", Fore.GREEN + guess, Fore.GREEN + "is in the word!")
+         score += 10  # Add points for each correct letter
+         guessed_letters.append(guess)
+         word_as_list = list(word_completion)
+         indices = [i for i, letter in enumerate(word) if letter == guess]
+
+
+
 
 def hangman_display(tries_left):
     stages = [  # head, torso, both arms, and both legs
