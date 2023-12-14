@@ -21,7 +21,81 @@ def play_hangman(word):
     tries_left = 6
     print(pyfiglet.figlet_format("Hangman"))
     print(word_completion)
+    print(hangman_display(tries_left))
     print("\n")
+
+def hangman_display(tries_left):
+    stages = [  # head, torso, both arms, and both legs
+                """
+                   ========
+                   |      |
+                   |      O      OUCH!
+                   |     \\|/   
+                   |      |
+                   |     / \\
+                   ========
+                """,
+                # head, torso, both arms, and one leg
+                """
+                   ========
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / 
+                   ========
+                """,
+                # head, torso, and both arms
+                """
+                   ========
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |      
+                   ========
+                """,
+                # head, torso, and one arm
+                """
+                   ========
+                   |      |
+                   |      O
+                   |     \\|
+                   |      |
+                   |     
+                   ========
+                """,
+                # head and torso
+                """
+                   ========
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   ========
+                """,
+                # head
+                """
+                   ========
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   ========
+                """,
+                # initial empty state
+                """
+                   ========
+                   |      |
+                   |      
+                   |    
+                   |      
+                   |     
+                   ========
+                """
+    ]
 
 
 def main():
