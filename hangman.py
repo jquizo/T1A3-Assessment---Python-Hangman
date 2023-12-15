@@ -35,19 +35,33 @@ def play_hangman(word):
          if guess in guessed_letters:
             print(Fore.RED + "You already guessed this letter", guess)
       # Check if the letter is not in the word
-      elif guess not in word:
-         print(Fore.RED + guess, Fore.RED + "is not in the word.")
-         tries_left -= 1
-         guessed_letters.append(guess)
-      else: 
-      # Correct letter guess
-         print(Fore.GREEN + "Good job,", Fore.GREEN + guess, Fore.GREEN + "is in the word!")
-         score += 10  # Add points for each correct letter
-         guessed_letters.append(guess)
-         word_as_list = list(word_completion)
-         indices = [i for i, letter in enumerate(word) if letter == guess]
-         # Update word_completion with the correctly guessed letter
-         
+         elif guess not in word:
+            print(Fore.RED + guess, Fore.RED + "is not in the word.")
+            tries_left -= 1
+            guessed_letters.append(guess)
+         else: 
+         # Correct letter guess
+            print(Fore.GREEN + "Good job,", Fore.GREEN + guess, Fore.GREEN + "is in the word!")
+            score += 10  # Add points for each correct letter
+            guessed_letters.append(guess)
+            word_as_list = list(word_completion)
+            indices = [i for i, letter in enumerate(word) if letter == guess]
+            # Update word_completion with the correctly guessed letter
+            for index in indices:
+               word_as_list[index] = guess
+               word_completion = "".join(word_as_list)
+            # Check if word is fully guessed
+            if "_" not in word_completion:
+               guessed = True
+      # Checks if guess is the length of the word
+      elif len(guess) == len(word) and guess.isalpha():
+         if guess in guessed_words:
+            print(Fore.RED + "You already guessed the word", guess)
+         elif guess != word:
+            print(Fore.RED + guess, "is not the word.")
+            tries_left -= 1
+            guessed_words.append(guess)
+               
 
 def hangman_display(tries_left):
     stages = [  # head, torso, both arms, and both legs
