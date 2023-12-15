@@ -57,10 +57,16 @@ def play_hangman(word):
       elif len(guess) == len(word) and guess.isalpha():
          if guess in guessed_words:
             print(Fore.RED + "You already guessed the word", guess)
+         # Checks if guessed word is incorrect
          elif guess != word:
             print(Fore.RED + guess, "is not the word.")
             tries_left -= 1
             guessed_words.append(guess)
+         else:
+            # Correctly guessing whole word
+            guessed = True
+            word_completion = word
+            score += 50  # Add points for guessing the whole word
                
 
 def hangman_display(tries_left):
