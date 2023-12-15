@@ -67,6 +67,11 @@ def play_hangman(word):
             guessed = True
             word_completion = word
             score += 50  # Add points for guessing the whole word
+      else:
+         print(Fore.RED + "Not a valid guess.")
+         print(hangman_display(tries_left))
+         print(word_completion)
+         print("\n")
                
 
 def hangman_display(tries_left):
