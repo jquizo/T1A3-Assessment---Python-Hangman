@@ -72,8 +72,13 @@ def play_hangman(word):
          print(hangman_display(tries_left))
          print(word_completion)
          print("\n")
+   if guessed:
+      print(Fore.GREEN + pyfiglet.figlet_format("You Win!"))
+      print(Fore.GREEN + f"Congrats, you guessed the word! Score: {score}")
+   else:
+      print(Fore.RED + pyfiglet.figlet_format("You Lose!"))
+      print(Fore.RED + f"Sorry, you ran out of tries. The word was {word}. Better luck next time! Score: {score}")
                
-
 def hangman_display(tries_left):
     stages = [  # head, torso, both arms, and both legs
                 """
