@@ -151,7 +151,8 @@ def hangman_display(tries_left):
                    ========
                 """
     ]
-
+    hangman_display = stages[tries_left]
+    return f"tries left: {tries_left}\n{hangman_display}"
 
 def main():
     word = get_random_word()
