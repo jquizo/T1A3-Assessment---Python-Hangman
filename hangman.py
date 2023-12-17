@@ -9,11 +9,17 @@ from colorama import Fore
 colorama.init(autoreset=True)
 from pyfiglet import figlet_format
 
+leaderboard = {}  # Initialize an empty leaderboard dictionary
+
 # Gets random word from words.py
 def get_word():
     word = random.choice(word_list)
     return word.upper()
 
+def display_leaderboard():
+    print("\nLeaderboard:")
+    for name, score in sorted(leaderboard.items(), key=lambda x: x[1], reverse=True):
+        print(f"{name}: {score} points")
 
 def play(word):
     word_completion = "_" * len(word)
@@ -68,6 +74,9 @@ def play(word):
     if guessed:
         print(Fore.GREEN + pyfiglet.figlet_format("You Win!"))
         print(Fore.GREEN + f"Congrats, you guessed the word! Score: {score}")
+        player_name = input("Enter your name for the leaderboard: ")
+        leaderboard[player_name] = score  # Add the player's score to the leaderboard
+        display_leaderboard()
     else:
         print(Fore.RED + pyfiglet.figlet_format("You Lose!"))
         print(Fore.RED + f"Sorry, you ran out of tries. The word was {word}. Better luck next time! Score: {score}")
