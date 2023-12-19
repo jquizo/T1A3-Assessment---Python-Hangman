@@ -9,6 +9,12 @@ class TestGetWordFunction(unittest.TestCase):
         self.assertTrue(isinstance(word, str))
         self.assertTrue(len(word) > 0)
 
+    def test_different_words_on_consecutive_calls(self):
+        # Test to ensure the get_word function returns different words on consecutive calls
+        word1 = get_word()
+        word2 = get_word()
+        self.assertNotEqual(word1, word2)
+
 if __name__ == '__main__':
     unittest.main()
 
