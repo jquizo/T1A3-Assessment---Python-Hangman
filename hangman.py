@@ -161,7 +161,14 @@ def hangman_display(tries_left):
 def main():
     word = get_word()
     play(word)
-    while input("Would you like to play again? (Y/N) ").upper() == "Y":
+    while True:
+        play_again = input("Would you like to play again? (Y/N) ").upper()
+        if play_again == "N":
+            print("Thanks for playing!")
+            break
+        elif play_again != "Y":
+            print("Thanks for playing!")
+            break
         word = get_word()
         play(word)
 
