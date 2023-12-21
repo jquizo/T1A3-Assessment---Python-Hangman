@@ -19,3 +19,5 @@ class TestPlayFunction(unittest.TestCase):
     
 if __name__ == "__main__":
     unittest.main()
+
+# use python -m unittest test_play_function.py on terminal to test

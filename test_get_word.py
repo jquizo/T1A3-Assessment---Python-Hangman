@@ -18,4 +18,4 @@ class TestGetWordFunction(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-# use python -m unittest test_get_word.py to test
+# use python -m unittest test_get_word.py on terminal to test
