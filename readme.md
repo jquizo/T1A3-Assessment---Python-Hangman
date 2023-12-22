@@ -35,7 +35,17 @@ I acknowledge the use of ChatGPT (chat.openai.com) to help produce this applicat
 3. **Leaderboard** - After a game, you get an option to enter your name, and your name and score will be added to the leaderboard. For each correct letter, you get +10 points. If you guess the word in one go, you get +50 points. (Unforunately leaderboards clear after closing the terminal)
 
 ## R7 - Implementation Plan
-TO DO
+I used a Trello board to keep track of all the tasks and functions I needed to implement. 
+[Link to trello board](https://trello.com/b/SejBlFoG/t1a3-assessment-python-hangman-application)
+
+####  Trello board with tasks
+![Trello board with Todos](/images/trelloScreenshot-1.jpg)
+#### Individual Trello card
+![Individual trello card](/images/trelloScreenshot-2.jpg)
+#### Individual Trello card
+![Individual trello card](/images/trelloScreenshot-3.jpg)
+#### Almost done!
+![Individual trello card](/images/trelloScreenshot-4.jpg)
 
 ## R8 - Instructions
 To play this game, you will need **Python** installed. You can get the latest version from [here.](https://www.python.org/)
