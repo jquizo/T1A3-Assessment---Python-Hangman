@@ -23,6 +23,7 @@ I acknowledge the use of ChatGPT (chat.openai.com) to help produce this applicat
 ## R4 - Links
 
 * [Github page here](https://github.com/jquizo/T1A3-Assessment---Python-Hangman)
+* [Presentation link here](https://www.youtube.com/watch?v=IycXl_-TS0M)
 
 ## R5 - Style conventions
 * This Application follows the PEP 8 – Style Guide for Python Code 
